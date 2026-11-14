@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lumen HD — Jernihkan foto jadi HD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+<main class="app">
+  <header class="glass top">
+    <h1>Lumen HD</h1>
+    <p>Foto buram atau kecil jadi tajam dan besar. Tarik fotonya ke sini, pilih skala, selesai.</p>
+  </header>
+
+  <section class="grid">
+    <div class="col">
+      <label class="glass drop" id="drop" tabindex="0">
+        <input type="file" id="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
+        <b>Tarik foto ke sini</b>
+        <span>atau klik untuk memilih, atau tempel dengan Ctrl+V. JPG, PNG, WebP, maks 10 MB.</span>
+      </label>
+
+      <div class="glass opts">
+        <div class="row"><span>Perbesar</span>
+          <div class="seg" id="scale">
+            <button data-s="2">2x</button><button data-s="3" class="on">3x</button><button data-s="4">4x</button>
+          </div>
+        </div>
+        <div class="row btns">
+          <button class="btn primary" id="runAll">Jernihkan semua</button>
+          <button class="btn" id="zipAll" disabled>Unduh ZIP</button>
+          <button class="btn ghost" id="clear" disabled>Kosongkan</button>
+        </div>
+      </div>
+
+      <div class="glass list" id="list"><p class="empty">Belum ada foto. Tambahkan foto untuk memulai.</p></div>
+    </div>
+
+    <div class="glass viewer">
+      <div class="bar">
+        <div class="seg">
+          <button id="zo" title="Perkecil">−</button><button id="zl" disabled>1x</button><button id="zi" title="Perbesar">+</button>
+        </div>
+        <button class="btn" id="dl" disabled>Unduh HD</button>
+      </div>
+      <div class="stage" id="stage" tabindex="0"><p class="empty">Pilih foto dari daftar untuk melihat hasilnya.</p></div>
+      <p class="meta" id="meta"></p>
+    </div>
+  </section>
+</main>
+<div id="toasts" aria-live="polite"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
